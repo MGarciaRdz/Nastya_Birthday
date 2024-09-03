@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-image: url(imagen2.jpg) ;
+    background-color: powderblue;
     background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la pantalla */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita que la imagen se repita */

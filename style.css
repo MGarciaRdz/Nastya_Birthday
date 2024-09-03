@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: url(imagen2.jpg) ;
+    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen en su posición al hacer scroll */
+}
+
+/* Libro */
+
+
+.book{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+
+}
+
+.paper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+
+}
+
+.front,.back{
+    background-color: rgb(255, 190, 227);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    border-radius: 10px;
+}
+.back{
+    border-left: 3px solid #ff69b4; /* Color de borde más vibrante */
+
+}
+.front{
+    z-index: 1;
+    backface-visibility:hidden;
+    border-left: 3px solid #ff69b4; /* Color de borde más vibrante */
+
+
+}
+
+
+p
+{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#tituloprimero{
+    margin-bottom: 40px;
+}
+#primero{
+    font-size: 15px;
+}
+.title {
+    font-size: 3em;
+    color: #ff5722;
+    animation: bounce 2s infinite;
+    text-align: center;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+.back{
+    z-index: 0;
+    
+}
+.front-content, .back-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px; /* Mayor espacio para el contenido */
+    text-align: center;
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+.front-content p, .back-content p {
+    font-size: 18px; /* Tamaño de fuente más cómodo para la lectura */
+    line-height: 1.6;
+    color: #333; /* Color del texto más oscuro para mejor legibilidad */
+}
+.back-content{
+    transform: rotateY(180deg);
+}
+
+/* Efectos */
+.flipped .front,
+.flipped .back{
+    transform: rotateY(-180deg) ;
+}
+
+/* Botones */
+button{
+    border: none;
+    background-color: gray;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s ;
+
+}
+
+button:focus{
+    outline: none;
+}
+ button:hover{
+    color:rgb(59, 57, 57);
+ }
+#Boton{
+    color: white;
+    transition: all .3s; 
+}
+
+#Boton:hover{
+    color: black;
+    
+}
+
+ i{
+    font-size: 50px;
+    color: gray;
+    animation: float 2s  ease-in-out infinite;
+ }
+ @keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Mover hacia arriba */
+    }
+}
+ /* Ordenar paginas */
+
+ #P1{
+    z-index: 5;
+ }
+ #P2{
+    z-index: 4;
+ }
+ #P3{
+    z-index: 3;
+ }
+ #P4 {
+    z-index: 2;
+}
+
+#P5 {
+    z-index: 1;
+}
+
+
+/* creditos */
+
+
+.creditos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
